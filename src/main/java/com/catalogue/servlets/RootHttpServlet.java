@@ -4,11 +4,10 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import java.io.IOException;
 import java.io.PrintWriter;
 
-public class IndexHttpServlet extends HttpServlet
+public class RootHttpServlet extends HttpServlet
 {
 
     @Override
@@ -16,19 +15,21 @@ public class IndexHttpServlet extends HttpServlet
 
         response.setContentType("text/html");
         response.setCharacterEncoding( "UTF-8" );
+        request.setAttribute("test", "i");
 
         PrintWriter out = response.getWriter();
         out.println("<!DOCTYPE html>");
         out.println("<html>");
         out.println("<head>");
         out.println("<meta charset=\"utf-8\" />");
-        out.println("<title>Test</title>");
+        out.println("<title>Root</title>");
         out.println("</head>");
         out.println("<body>");
-        out.println("<p>Ceci est une page générée depuis une servlet.</p>");
+        out.println("<p>Root.</p>");
         out.println("</body>");
         out.println("</html>");
 
+        request.getRequestDispatcher("/WEB-INF/root.jsp").forward(request, response);
     }
 
 }
