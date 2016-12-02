@@ -20,7 +20,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>RootHttpServlet</servlet-name>
-        <url-pattern>/</url-pattern>
+        <url-pattern>/root</url-pattern>
     </servlet-mapping>
 
     <session-config>

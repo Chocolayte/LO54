@@ -1,5 +1,9 @@
 package com.catalogue.servlets;
 
+import com.catalogue.core.entity.Course;
+import com.catalogue.repository.JdbcClientDAO;
+import com.catalogue.repository.JdbcCourseDAO;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -13,21 +17,17 @@ public class RootHttpServlet extends HttpServlet
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+        Course course = new Course();
+        course.setCode("X");
+        course.setTitle("Grand tour 2009");
+
+        JdbcCourseDAO dbCourse = new JdbcCourseDAO();
+        dbCourse.Connect();
+        dbCourse.Insert(course);
+
         response.setContentType("text/html");
         response.setCharacterEncoding( "UTF-8" );
         request.setAttribute("test", "i");
-
-        PrintWriter out = response.getWriter();
-        out.println("<!DOCTYPE html>");
-        out.println("<html>");
-        out.println("<head>");
-        out.println("<meta charset=\"utf-8\" />");
-        out.println("<title>Root</title>");
-        out.println("</head>");
-        out.println("<body>");
-        out.println("<p>Root.</p>");
-        out.println("</body>");
-        out.println("</html>");
 
         request.getRequestDispatcher("/WEB-INF/root.jsp").forward(request, response);
     }

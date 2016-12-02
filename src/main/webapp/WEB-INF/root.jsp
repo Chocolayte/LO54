@@ -194,20 +194,3 @@
 <script src="https://code.getmdl.io/1.2.1/material.min.js"></script>
 </body>
 </html>
-
-
-<%
-    String attribut = (String) request.getAttribute("test");
-    out.println( attribut + "<br>" );
-
-    String parametre = request.getParameter( "auteur" );
-    out.println( parametre + "<br>" );
-
-    for (int i = 1; i < 3; i++){
-        out.println("Numéro " + i + ": <select name=\"number"+i+"\">");
-        for(int j = 1; j <= 10; j++){
-            out.println("<option value=\""+j+"\">"+ j + "</option>");
-        }
-        out.println("</select><br />");
-    }
-%>

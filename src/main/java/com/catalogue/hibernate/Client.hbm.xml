@@ -1,0 +1,20 @@
+<hibernate-mapping>
+    <class name="com.catalogue.core.entity.Client" table="CLIENT">
+
+        <meta attribute="class-description">
+            This class contains the course sessions details.
+        </meta>
+
+        <id name="id" column="ID" type="int">
+            <generator class="increment"/>
+        </id>
+
+        <property name="lastname" type="string" column="LASTNAME" not-null="true"/>
+        <property name="firstname" type="string" column="FIRSTNAME" not-null="true"/>
+        <property name="address" type="string" column="ADDRESS" not-null="true"/>
+        <property name="phone" type="string" column="PHONE" not-null="true"/>
+        <property name="email" type="string" column="EMAIL" />
+        <property name="courseSessionId" type="int" column="COURSE_SESSION_ID" not-null="true"/>
+
+    </class>
+</hibernate-mapping>

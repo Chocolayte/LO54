@@ -8,8 +8,8 @@
       <case-sensitivity plain-identifiers="upper" quoted-identifiers="exact" />
       <secret-storage>memory</secret-storage>
       <user-name>root</user-name>
-      <introspection-scope>:ROOT,APP</introspection-scope>
-      <resolve-scope>:ROOT,APP</resolve-scope>
+      <introspection-scope>:APP,ROOT</introspection-scope>
+      <resolve-scope>:APP,ROOT</resolve-scope>
     </data-source>
   </component>
 </project>
