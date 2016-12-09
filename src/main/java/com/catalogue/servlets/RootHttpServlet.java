@@ -22,8 +22,7 @@ public class RootHttpServlet extends HttpServlet
         course.setTitle("Grand tour 2009");
 
         JdbcCourseDAO dbCourse = new JdbcCourseDAO();
-        dbCourse.Connect();
-        dbCourse.Insert(course);
+        dbCourse.persist(course);
 
         response.setContentType("text/html");
         response.setCharacterEncoding( "UTF-8" );

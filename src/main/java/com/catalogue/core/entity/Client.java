@@ -58,7 +58,7 @@ public class Client {
      * Met en place le firstname
      * @param name le firstname
      */
-    public void setFirstName(String name) {
+    public void setFirstname(String name) {
         this.firstname = name;
     }
 
