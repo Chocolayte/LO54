@@ -25,7 +25,7 @@ public class IndexHttpServlet extends HttpServlet
         out.println("<title>Test</title>");
         out.println("</head>");
         out.println("<body>");
-        out.println("<p>Ceci est une page gÃ©nÃ©rÃ©e depuis une servlet.</p>");
+        out.println("<p>Ceci est une page générée depuis une servlet.</p>");
         out.println("</body>");
     }
 
